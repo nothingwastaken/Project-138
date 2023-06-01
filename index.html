@@ -18,13 +18,32 @@
         <center>
             <heading>
                 <h3>Ping pong game</h3>
-                <button id = "tfb" class="btn btn-info">Information</button>
+                <button id = "tfb" class="btn btn-info" data-toggle = "modal" data-target = "#myModal">Information</button>
             </heading>
             <br><br><br>
             <button class = "btn btn-success">Play</button>
             <br><br>
             <h3 id = "status"></h3>
             <div id = "canvas"></div>
+
+            <div id = "myModal" class = "modal fade">
+                <div class = "modal-dialog">
+                  <div class = "modal-content">
+                    <div class = "modal-header">
+                      <button class = "close" data-dismiss = "modal">&times;</button>
+                      <h3>Instructions to play</h3>
+                    </div>
+                    <div class = "modal-body">
+                        <ol>
+                            <li>Coffee</li>
+                            <li>Tea</li>
+                            <li>Milk</li>
+                          </ol>
+                          
+                    </div>
+                  </div>
+                </div>
+              </div>
         </center>
 
         <script src="main.js"></script>
