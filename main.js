@@ -1,4 +1,5 @@
 
+
 /*created by prashant shukla */
 
 var paddle2 =10,paddle1=10;
@@ -12,6 +13,10 @@ var paddle1Y;
 var  playerscore =0;
 var audio1;
 var pcscore =0;
+
+var r_wrist_x = 0;
+var r_wrist_y = 0;
+var r_wrist_score = 0;
 //ball x and y and speedx speed y and radius
 var ball = {
     x:350/2,
@@ -35,6 +40,14 @@ function setup(){
 
 function modelLoaded(){
   console.log("ready");
+}
+
+function gotPoses(results){
+  if(results.length > 0){
+    r_wrist_x = results[0].pose.right_wrist.x;
+    r_wrist_y = results[0].pose.right_wrist.y;
+    r_wrist_score = results[0].pose.right_wrist.score;
+  }
 }
 
 function draw(){
@@ -77,6 +90,12 @@ function draw(){
    
    //function move call which in very important
     move();
+
+  if(r_wrist_score > 0.2){
+    fill('#ED6767');
+    stroke("#AHHF90");
+    circle(r_wrist_x, r_wrist_y, 50);
+  }
 }
 
 
