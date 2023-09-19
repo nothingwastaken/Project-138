@@ -23,7 +23,7 @@ rightWristX = 0;
 scoreRightWrist = 0;
 
 //Define a variable to hold the status of the game
-game_status = "";
+var game_status = "";
  
 
 function setup(){
